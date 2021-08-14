@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.navbar {
+  width: 100vw;
+  height: 200px;
+  opacity: 0.98;
+}
+.navbar .nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #333;
+  list-style-type: none;
+  padding-right: 1rem;
+}
+
+.nav-item {
+  display: inline-block;
+  font-size: 2rem;
+  text-transform: uppercase;
+  padding: 2rem 1rem;
+  font-weight: 300;
+}
+.nav-item a {
+  transition: all 0.25s ease-in-out;
+}
+.nav-item a:hover {
+  color: #ff652f;
+}
+.nav-item.active > a {
+  color: #ff652f;
+}
+
+body {
+  background-color: #333;
+  color: #fff;
+  height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1;
+}
+
+h1, h2, h3 {
+  font-weight: 400;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.text-secondary {
+  color: #ff652f;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  padding: 1rem;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+}
+main .social-icons {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+}
+main .social-icons a {
+  padding: 0.4rem;
+  transition: all 0.25s ease-in-out;
+}
+main .social-icons a:hover {
+  color: #ff652f;
+}
+
+footer {
+  font-size: 1rem;
+  position: fixed;
+  bottom: 0.4rem;
+  right: 1rem;
+  text-align: right;
+  padding: 1rem;
+  color: #fff;
+}/*# sourceMappingURL=style.css.map */
