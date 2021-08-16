@@ -1,34 +1,27 @@
-const http = require("http");
-const fs = require("fs");
+const express = require("express");
+const path = require("path");
+const app = express();
+const PORT = process.env.PORT || 3001;
 
-const server = http.createServer((req, res) => {
-  res.setHeader("Content-Type", "text/html");
+app.use(express.static(path.join(__dirname, "public")));
 
-  let path = "./";
+app.get("/*", (req, res) => {
+  console.log(req.url);
   switch (req.url) {
     case "/":
-      path += "index.html";
+      res.sendFile(path.join(__dirname, "index.html"));
+      console.log(__dirname);
       break;
     case "/about":
-      path += "about.html";
+      res.sendFile(path.join(__dirname, "about.html"));
+      console.log(req.url);
       break;
     case "/contact-me":
-      path +="contact-me.html";
+      res.sendFile(path.join(__dirname, "contact-me.html"));
+      console.log(__dirname, req.url);
       break;
     default:
-      path += "404.html";
+      res.sendFile(path.join(__dirname, "404.html"));
   }
-
-  fs.readFile(path, (err, data) => {
-    if (err) {
-      console.error(err);
-      res.end();
-    } else {
-      res.end(data);
-    }
-  });
 });
-
-server.listen(3001, () => {
-  console.log("listening on port 3001");
-});
+app.listen(PORT, console.log(`Server started on port ${PORT}`));
